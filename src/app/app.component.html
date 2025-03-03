@@ -1,1 +1,16 @@
-<pre>{{ users | json }}</pre>
+<div class="card-body" style="width: 18rem;" >
+
+    <label for="filterForm">Filter: </label>
+    <input id="filterForm" type="text"  class="form-control" [formControl]="filterForm">
+
+</div>
+
+<ng-content *ngFor ="let user of users">
+    <div class="card" style="width: 18rem;" >
+        <div class="card-body">
+            <div class="card-title">{{user.user}}</div>
+            <div class="card-text">{{user.email}}</div>
+    
+        </div>
+    </div>
+</ng-content>
